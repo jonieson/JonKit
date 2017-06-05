@@ -1,0 +1,16 @@
+//
+//  JonieCommon.swift
+//  JonieKit
+//
+//  Created by ydz on 17/6/2.
+//  Copyright © 2017年 jonie. All rights reserved.
+//
+
+import UIKit
+
+public let ScreenWidth = UIScreen.main.bounds.width
+public let ScreenHeight = UIScreen.main.bounds.height
+
+
+//MARK: --requestRouteDefine--
+let loginURL = "／user／login"

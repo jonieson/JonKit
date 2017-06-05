@@ -1,0 +1,6 @@
+framework module Pods_JonieKit {
+  umbrella header "Pods-JonieKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
