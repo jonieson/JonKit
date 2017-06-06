@@ -17,6 +17,7 @@
 		1C6B95FF1EB1950D00524C47 /* JonieKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B95FE1EB1950D00524C47 /* JonieKitUITests.swift */; };
 		1C6B960E1EB1980F00524C47 /* JonieAnimationBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B960D1EB1980F00524C47 /* JonieAnimationBase.swift */; };
 		1C6B96101EB1A51700524C47 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B960F1EB1A51700524C47 /* TestViewController.swift */; };
+		1C6FDA9F1EE6B7DC0070E370 /* JonieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FDA9E1EE6B7DC0070E370 /* JonieDataModel.swift */; };
 		1C755ABF1EE16919007F5970 /* JoniePopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C755ABE1EE16919007F5970 /* JoniePopAnimation.swift */; };
 		1C755AC11EE16929007F5970 /* JonieMissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C755AC01EE16929007F5970 /* JonieMissAnimation.swift */; };
 		1C755AC41EE16B35007F5970 /* JonieCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C755AC31EE16B35007F5970 /* JonieCommon.swift */; };
@@ -62,6 +63,7 @@
 		1C6B96001EB1950D00524C47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C6B960D1EB1980F00524C47 /* JonieAnimationBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JonieAnimationBase.swift; sourceTree = "<group>"; };
 		1C6B960F1EB1A51700524C47 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		1C6FDA9E1EE6B7DC0070E370 /* JonieDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JonieDataModel.swift; sourceTree = "<group>"; };
 		1C755ABE1EE16919007F5970 /* JoniePopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoniePopAnimation.swift; sourceTree = "<group>"; };
 		1C755AC01EE16929007F5970 /* JonieMissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JonieMissAnimation.swift; sourceTree = "<group>"; };
 		1C755AC31EE16B35007F5970 /* JonieCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JonieCommon.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		1C930FDD1EDEBC9A00B44FBB /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				1C6FDA9E1EE6B7DC0070E370 /* JonieDataModel.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				1C6B960E1EB1980F00524C47 /* JonieAnimationBase.swift in Sources */,
 				1C755AC41EE16B35007F5970 /* JonieCommon.swift in Sources */,
 				1C930FE11EDEBCEE00B44FBB /* LoginViewModel.swift in Sources */,
+				1C6FDA9F1EE6B7DC0070E370 /* JonieDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,10 +17,8 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.view.backgroundColor = UIColor.red
         self.navigationItem.title = "test"
-//        self.view.backgroundColor = UIColor.green
-//        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+
         view.backgroundColor = UIColor.clear
         view.clipsToBounds = true
 //        initBaseView()

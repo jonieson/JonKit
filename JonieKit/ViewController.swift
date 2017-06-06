@@ -21,7 +21,11 @@ class ViewController: UIViewController {
         customAnimation.animationType = JonieAnimationBase.JonieAnimationType.Pop
         let login = LoginViewModel()
         login.fetchData()
+        
         login.blockRequestData { (response) in
+            
+        }
+        login.requestSuccess = {(name )in
             
         }
         JonieToastView.instance.showToast(content: "")

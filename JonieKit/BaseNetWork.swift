@@ -40,4 +40,6 @@ class BaseNetWork: NSObject {
             }
             
         }
+    
+    
 }
