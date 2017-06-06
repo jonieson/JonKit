@@ -18,7 +18,7 @@ class JonieToastView: NSObject {
     //MARK: --showToastMessage--
     func showToast(content:String){
         clear()
-        let frame = CGRect(x: 0, y: 0, width: 90, height: 90)
+        let frame = CGRect(x: 0, y: 0, width: 150, height: 35)
         let toastContainView = UIView()
         toastContainView.layer.cornerRadius = 10
         toastContainView.backgroundColor = UIColor.black

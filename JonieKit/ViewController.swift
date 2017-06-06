@@ -14,19 +14,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //self.navigationController?.delegate = self
-        customAnimation = JonieAnimationBase()
-        customAnimation.animationDurationTime = 4.0
-        customAnimation.animationType = JonieAnimationBase.JonieAnimationType.Pop
+                
         let login = LoginViewModel()
         login.fetchData()
         
         login.blockRequestData { (response) in
-            
+            let model = response as! JonieDataModel
+            print(model.userName as Any)
         }
         login.requestSuccess = {(name )in
-            
+//            let model = name as! JonieDataModel
+//            print(model.userName as Any)
         }
         JonieToastView.instance.showToast(content: "")
         

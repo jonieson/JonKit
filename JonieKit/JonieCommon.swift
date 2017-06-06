@@ -13,4 +13,5 @@ public let ScreenHeight = UIScreen.main.bounds.height
 
 
 //MARK: --requestRouteDefine--
-let loginURL = "／user／login"
+let baseRoute = "http://192.168.0.102/project/FirstDemo/index.php/Home/"
+let loginURL = baseRoute + "login/login"

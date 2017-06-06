@@ -11,14 +11,23 @@ import SwiftyJSON
 class JonieDataModel: NSObject {
 
     var userName : String?
-    var token : String?
-    var userId : String?
+//    var token : String?
+    var id : String?
     var avatar : String?
+    var type : String?
+    var level : String?
+    var count : String?
+    var registTime : String?
+    var signTime : String?
     
     func jsonWithData(data:JSON){
-        userName = data[""].stringValue
-        token = data[""].stringValue
-        userId = data[""].stringValue
-        avatar = data[""].stringValue
+        userName = data["userName"].stringValue
+        type = data["type"].stringValue
+        id = data["id"].stringValue
+        avatar = data["avatar"].stringValue
+        level = data["level"].stringValue
+        count = data["count"].stringValue
+        registTime = data["registTime"].stringValue
+        signTime = data["signTime"].stringValue
     }
 }
