@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5482AA1EE7F4B2008250EF /* JonieDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5482A91EE7F4B2008250EF /* JonieDownloadViewController.swift */; };
 		1C6B95DC1EB1950D00524C47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B95DB1EB1950D00524C47 /* AppDelegate.swift */; };
 		1C6B95DE1EB1950D00524C47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6B95DD1EB1950D00524C47 /* ViewController.swift */; };
 		1C6B95E11EB1950D00524C47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B95DF1EB1950D00524C47 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5482A91EE7F4B2008250EF /* JonieDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JonieDownloadViewController.swift; sourceTree = "<group>"; };
 		1C6B95D81EB1950D00524C47 /* JonieKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JonieKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6B95DB1EB1950D00524C47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C6B95DD1EB1950D00524C47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1C6B95DD1EB1950D00524C47 /* ViewController.swift */,
 				1C6B960F1EB1A51700524C47 /* TestViewController.swift */,
 				1CBF78461EB2EC29009D026E /* AnimationViewController.swift */,
+				1C5482A91EE7F4B2008250EF /* JonieDownloadViewController.swift */,
 				1C6B95DF1EB1950D00524C47 /* Main.storyboard */,
 				1C6B95E51EB1950D00524C47 /* Assets.xcassets */,
 				1C6B95E71EB1950D00524C47 /* LaunchScreen.storyboard */,
@@ -430,6 +433,7 @@
 				1C6B95DC1EB1950D00524C47 /* AppDelegate.swift in Sources */,
 				1C6B960E1EB1980F00524C47 /* JonieAnimationBase.swift in Sources */,
 				1C755AC41EE16B35007F5970 /* JonieCommon.swift in Sources */,
+				1C5482AA1EE7F4B2008250EF /* JonieDownloadViewController.swift in Sources */,
 				1C930FE11EDEBCEE00B44FBB /* LoginViewModel.swift in Sources */,
 				1C6FDA9F1EE6B7DC0070E370 /* JonieDataModel.swift in Sources */,
 			);
