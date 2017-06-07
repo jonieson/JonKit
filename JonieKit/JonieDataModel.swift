@@ -10,15 +10,15 @@ import UIKit
 import SwiftyJSON
 class JonieDataModel: NSObject {
 
-    var userName : String?
+    var userName : String!
 //    var token : String?
-    var id : String?
-    var avatar : String?
-    var type : String?
-    var level : String?
-    var count : String?
-    var registTime : String?
-    var signTime : String?
+    var id : String!
+    var avatar : String!
+    var type : String!
+    var level : String!
+    var count : String!
+    var registTime : String!
+    var signTime : String!
     
     func jsonWithData(data:JSON){
         userName = data["userName"].stringValue

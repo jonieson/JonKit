@@ -22,11 +22,7 @@ class ViewController: UIViewController {
             let model = response as! JonieDataModel
             print(model.userName as Any)
         }
-        login.requestSuccess = {(name )in
-//            let model = name as! JonieDataModel
-//            print(model.userName as Any)
-        }
-        JonieToastView.instance.showToast(content: "")
+//        JonieToastView.instance.showToast(content: "hello world,everybody come baby let us go")
         
     }
 

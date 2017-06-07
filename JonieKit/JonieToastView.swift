@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class JonieToastView: NSObject {
 
     static var instance : JonieToastView = JonieToastView()
@@ -35,7 +35,21 @@ class JonieToastView: NSObject {
         window.addSubview(toastContainView)
         windows.append(window)
         
-        perform(#selector(removeToast(sender:)), with: window, afterDelay: 1.0)
+        let alertString = UILabel()
+        alertString.textColor = UIColor.white
+        alertString.font = UIFont.systemFont(ofSize: 12)
+        alertString.textAlignment = NSTextAlignment(rawValue: 1)!
+        alertString.text = content
+        toastContainView.addSubview(alertString)
+        alertString.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        
+        perform(#selector(removeToast(sender:)), with: window, afterDelay: 1.5)
     
     }
     func removeToast(sender : AnyObject){
