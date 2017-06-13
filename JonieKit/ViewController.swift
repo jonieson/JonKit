@@ -33,12 +33,7 @@ class ViewController: UIViewController {
         nextVc.modalPresentationStyle = UIModalPresentationStyle.custom
         navigationController?.present(nextVc, animated: true, completion: { () -> Void in
         })
-//        present(nextVc, animated: true) {
-//            
-//        }
-//        self.navigationController?.pushViewController(nextVc, animated: true)
-//        let animationVc = AnimationViewController()
-//        self.navigationController?.pushViewController(animationVc, animated: true)
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
