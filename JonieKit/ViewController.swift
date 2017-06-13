@@ -28,11 +28,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func push(_ sender: Any) {
+        /*
         let nextVc = TestViewController()
         nextVc.transitioningDelegate = nextVc
         nextVc.modalPresentationStyle = UIModalPresentationStyle.custom
         navigationController?.present(nextVc, animated: true, completion: { () -> Void in
         })
+        */
+        let downloadVc = JonieDownloadViewController()
+        navigationController?.pushViewController(downloadVc, animated: true)
 
     }
     override func didReceiveMemoryWarning() {
