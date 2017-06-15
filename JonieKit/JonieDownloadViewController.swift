@@ -34,7 +34,7 @@ class JonieDownloadViewController: UIViewController {
             let documentsPath = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask)[0]
             let fileURL = documentsPath.appendingPathComponent(response.suggestedFilename!)
             //完成以后才会输出,记得这里查看地址的时候，要把地址最前面的file//去掉
-            print("输出此时下载的地址位置。。。。。\(fileURL)");
+            print("输出此时下载的地址位置。。。。。\(documentsPath)");
             //两个参数表示如果有同名文件则会覆盖，如果路径中文件夹不存在则会自动创建
             return (fileURL,[.removePreviousFile, .createIntermediateDirectories])
         }
@@ -76,7 +76,7 @@ class JonieDownloadViewController: UIViewController {
         }else{
             //页面加载完毕就自动开始下载
             self.downloadRequest =  Alamofire.download(
-                "http://dldir1.qq.com/qqfile/qq/QQ7.9/16621/QQ7.9.exe", to: self.destinationPath);
+                "http://yibudanche.oss-cn-qingdao.aliyuncs.com/dl/DANCHE-Release-3.6.0.apk", to: self.destinationPath);
             //print("111111111111");
         }
         //下载进度
