@@ -59,9 +59,30 @@ class BaseNetWork: NSObject {
     func uploadImageToSever(path:String,parames:[String : AnyObject]?,image:UIImage,success:(JSON)->(),fial:(String)->()){
         
         let imageData = UIImageJPEGRepresentation(image, 1.0)
+
+        Alamofire.upload(multipartFormData: { (MultipartFormData) in
+            let postSting = "45640CA2DEA8F1A0F372B3DBE6EC6928E361A489E4F096DE0364554DCCD42FDD"
+            MultipartFormData.append(postSting.data(using: String.Encoding.utf8)!, withName: "data")
+            MultipartFormData.append(imageData!, withName: "file", fileName: "avatar.png", mimeType: "image/png")
+            
+            
+        }, to: "http://120.77.159.116:8080/heli-oms/files") { (result) in
+            switch result {
+                
+            case .success(let upload, _, _):
+                upload.responseJSON(completionHandler: { (response) in
+                    if let myJson = response.result.value {
+                        
+                        
+                    }
+                })
+            case .failure(let error):
+                print(error)
+            }
+            }
+        }
         
         
-        
-    }
+    
     
 }

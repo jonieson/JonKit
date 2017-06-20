@@ -16,13 +16,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
                 
         let login = LoginViewModel()
-        login.fetchData()
+//        login.fetchData()
         
-        login.blockRequestData { (response) in
-            let model = response as! JonieDataModel
-            print(model.userName as Any)
-        }
+//        login.blockRequestData { (response) in
+//            let model = response as! JonieDataModel
+//            print(model.userName as Any)
+//        }
 //        JonieToastView.instance.showToast(content: "hello world,everybody come baby let us go")
+        let img = UIImage(named: "4.jpg")
+        BaseNetWork.sharedInstance.uploadImageToSever(path: "", parames: [:], image: img!, success: { (JSON) in
+            
+            
+        }) { (fail) in
+            
+        }
+        
         
     }
 
