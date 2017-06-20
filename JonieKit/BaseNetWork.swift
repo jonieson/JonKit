@@ -36,21 +36,12 @@ class BaseNetWork: NSObject {
         }
         self.manager?.startListening()
     }
-    //MARK: --headerRequest--
+    //MARK: --headerRequest--methodsParamasAppendHeaders
     
         let headers: HTTPHeaders = [
             "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
             "Accept": "application/json"
             ]
-    Alamofire.request(path, method: method, parameters: parames,headers: headers).responseJSON { (dataResponse) in
-    if dataResponse.result.isSuccess{
-    let data = JSON(dataResponse.data!)
-    success(data)
-    }else{
-    
-    }
-    }
-    
         ///MARK: --Request--
         func getRequestWithData(path:String,method:Alamofire.HTTPMethod,parames:[String : AnyObject]?,success: @escaping (JSON)->(),fail:(String)->()) {
             
@@ -64,6 +55,13 @@ class BaseNetWork: NSObject {
             }
             
         }
-    
+    //MARK:-----uploadImageToSever---
+    func uploadImageToSever(path:String,parames:[String : AnyObject]?,image:UIImage,success:(JSON)->(),fial:(String)->()){
+        
+        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        
+        
+        
+    }
     
 }
