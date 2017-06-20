@@ -37,7 +37,7 @@ class BaseNetWork: NSObject {
         self.manager?.startListening()
     }
     //MARK: --headerRequest--
-    /*
+    
         let headers: HTTPHeaders = [
             "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
             "Accept": "application/json"
@@ -50,7 +50,7 @@ class BaseNetWork: NSObject {
     
     }
     }
-    */
+    
         ///MARK: --Request--
         func getRequestWithData(path:String,method:Alamofire.HTTPMethod,parames:[String : AnyObject]?,success: @escaping (JSON)->(),fail:(String)->()) {
             
