@@ -11,6 +11,14 @@ import Alamofire
 import SwiftyJSON
 class BaseNetWork: NSObject {
 
+    //下载文件的保存路径
+    var destinationPath:DownloadRequest.DownloadFileDestination!;
+    //用于停止下载时，保存已下载的部分
+    var cancelledData: Data?;
+    //下载请求对象
+    var downloadRequest: DownloadRequest!;
+    
+    
     var manager : NetworkReachabilityManager?
         static let sharedInstance = BaseNetWork()
     override init() {
@@ -82,8 +90,38 @@ class BaseNetWork: NSObject {
                 }
             }
         }
+        //MARK:------download----------
+    func downloadFile(path: String, fileName:String,start:Bool, success:(JSON)->(), fail:(String)->()){
         
+        //设置下载路径。保存到用户文档目录，文件名不变，如果有同名文件则会覆盖
+        self.destinationPath = { _, response in
+            let documentsPath = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask)[0]
+            let fileURL = documentsPath.appendingPathComponent(response.suggestedFilename!)
+            //完成以后才会输出,记得这里查看地址的时候，要把地址最前面的file//去掉
+            print("输出此时下载的地址位置。。。。。\(documentsPath)");
+            //两个参数表示如果有同名文件则会覆盖，如果路径中文件夹不存在则会自动创建
+            return (fileURL,[.removePreviousFile, .createIntermediateDirectories])
+        }
+        //判断是否暂停下载，如果暂停下载则暂停对应的文件内容下载｛fileName｝＋｛start｝
         
-    
-    
+        //下载进度
+        self.downloadRequest.downloadProgress(queue: DispatchQueue.main,closure: downloadProgress);
+        //下载数据响应
+        self.downloadRequest.responseData(completionHandler: downloadResponse);
+    }
+    func downloadProgress(progress: Progress){
+        print("当前进度：\(progress.fractionCompleted*100)%");
+    }
+    func downloadResponse(response: DownloadResponse<Data>)
+    {
+        switch response.result {
+        case .success( _):
+            print("文件下载完毕: \(response)");
+            UserDefaults.standard.removeObject(forKey: "fileOne")
+        case .failure:
+            //意外终止的话，把已下载的数据储存起来
+            self.cancelledData = response.resumeData;
+            UserDefaults.standard.set(response.resumeData, forKey: "fileOne")
+        }
+    }
 }

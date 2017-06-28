@@ -21,8 +21,6 @@ class JonieDownloadViewController: UIViewController {
     var cancelledData: Data?;
     //下载请求对象
     var downloadRequest: DownloadRequest!;
-    //获取临时文件目录内容
-    var tempData : Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +28,7 @@ class JonieDownloadViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white;
         self.title = "下载页面";
-        
-        //获取临时文件数据
-        let tempPathUrl = NSTemporaryDirectory()
-        let fileManager = FileManager.default
-        
+                
         //设置下载路径。保存到用户文档目录，文件名不变，如果有同名文件则会覆盖
         self.destinationPath = { _, response in
             let documentsPath = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask)[0]
@@ -63,7 +57,6 @@ class JonieDownloadViewController: UIViewController {
         if btn.isSelected {
             btn.setTitle("开始下载", for: UIControlState.normal);
             btn.isSelected = false;
-            
             //停止下载，记录下载进度
             self.downloadRequest.cancel();
         }else{
