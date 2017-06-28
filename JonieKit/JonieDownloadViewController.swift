@@ -76,7 +76,9 @@ class JonieDownloadViewController: UIViewController {
     }
     //MARK:-------------- 下载数据请求http
     func httpRequest() {
-        
+        if (UserDefaults.standard.data(forKey: "fileOne") != nil) {
+            self.cancelledData = UserDefaults.standard.object(forKey: "fileOne") as! Data?
+        }
         if let cancelledData = self.cancelledData {
             self.downloadRequest = Alamofire.download(resumingWith: cancelledData,to: self.destinationPath);
         }else{
@@ -104,9 +106,11 @@ class JonieDownloadViewController: UIViewController {
             //self.image = UIImage(data: data)
             self.bsBtn.setTitle("下载完成", for: UIControlState.normal);
             print("文件下载完毕: \(response)");
+            UserDefaults.standard.removeObject(forKey: "fileOne")
         case .failure:
             //意外终止的话，把已下载的数据储存起来
             self.cancelledData = response.resumeData;
+            UserDefaults.standard.set(response.resumeData, forKey: "fileOne")
         }
     }
     
