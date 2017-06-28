@@ -56,29 +56,30 @@ class BaseNetWork: NSObject {
             
         }
     //MARK:-----uploadImageToSever---
-    func uploadImageToSever(path:String,parames:[String : AnyObject]?,image:UIImage,success:(JSON)->(),fial:(String)->()){
+    func uploadImageToSever(path:String,parames:[String : AnyObject]?,image:UIImage,success:@escaping (JSON)->(),fial:(String)->()){
         
         let imageData = UIImageJPEGRepresentation(image, 1.0)
 
         Alamofire.upload(multipartFormData: { (MultipartFormData) in
-            
-            MultipartFormData.append(postSting.data(using: String.Encoding.utf8)!, withName: "data")
+            /*如果上传的图片到参数，请解开注释，遍历字典注意value类型
+            for (key, value)in parames{
+                MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+            */
             MultipartFormData.append(imageData!, withName: "file", fileName: "avatar.png", mimeType: "image/png")
-            
-            
         }, to: path) { (result) in
             switch result {
                 
             case .success(let upload, _, _):
                 upload.responseJSON(completionHandler: { (response) in
-                    if let myJson = response.result.value {
-                        
-                        
+                    if response.result.isSuccess {
+                        let data = JSON(response.data!)
+                        success(data)
                     }
                 })
             case .failure(let error):
                 print(error)
-            }
+                }
             }
         }
         
