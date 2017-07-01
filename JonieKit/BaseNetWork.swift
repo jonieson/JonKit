@@ -17,7 +17,8 @@ class BaseNetWork: NSObject {
     var cancelledData: Data?;
     //下载请求对象
     var downloadRequest: DownloadRequest!;
-    
+    //下载进度
+    var downloadProgress:((AnyObject)->())?
     
     var manager : NetworkReachabilityManager?
         static let sharedInstance = BaseNetWork()
@@ -104,6 +105,10 @@ class BaseNetWork: NSObject {
         }
         //判断是否暂停下载，如果暂停下载则暂停对应的文件内容下载｛fileName｝＋｛start｝
         
+        
+        self.downloadRequest = Alamofire.download(path, to: self.destinationPath)
+        
+        
         //下载进度
         self.downloadRequest.downloadProgress(queue: DispatchQueue.main,closure: downloadProgress);
         //下载数据响应
@@ -111,6 +116,7 @@ class BaseNetWork: NSObject {
     }
     func downloadProgress(progress: Progress){
         print("当前进度：\(progress.fractionCompleted*100)%");
+//        self.downloadProgress?(progress.fractionCompleted as AnyObject)
     }
     func downloadResponse(response: DownloadResponse<Data>)
     {

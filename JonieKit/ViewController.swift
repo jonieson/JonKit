@@ -44,8 +44,20 @@ class ViewController: UIViewController {
         navigationController?.present(nextVc, animated: true, completion: { () -> Void in
         })
         */
+        /*
         let downloadVc = JonieDownloadViewController()
         navigationController?.pushViewController(downloadVc, animated: true)
+         */
+        BaseNetWork.sharedInstance.downloadFile(path: "http://yibudanche.oss-cn-qingdao.aliyuncs.com/dl/DANCHE-Release-3.6.0.apk", fileName: "apk", start: true, success: { (response) in
+            
+        }) { (fail) in
+            
+        }
+        BaseNetWork.sharedInstance.downloadFile(path: "http://yibudanche.oss-cn-qingdao.aliyuncs.com/dl/DANCHE-Release-3.4.0.apk", fileName: "go", start: true, success: { (response) in
+            
+        }) { (fail) in
+            
+        }
 
     }
     override func didReceiveMemoryWarning() {
