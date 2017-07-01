@@ -12,13 +12,15 @@ import SwiftyJSON
 class BaseNetWork: NSObject {
 
     //下载文件的保存路径
-    var destinationPath:DownloadRequest.DownloadFileDestination!;
+    var destinationPath:DownloadRequest.DownloadFileDestination!
     //用于停止下载时，保存已下载的部分
-    var cancelledData: Data?;
+    var cancelledData: Data?
     //下载请求对象
-    var downloadRequest: DownloadRequest!;
+    var downloadRequest: DownloadRequest!
     //下载进度
-    var downloadProgress:((AnyObject)->())?
+    var downloadProgressBlock:((AnyObject,_ fileName:String)->())?
+    //文件名称
+    var tempFileName : String!
     
     var manager : NetworkReachabilityManager?
         static let sharedInstance = BaseNetWork()
@@ -108,7 +110,7 @@ class BaseNetWork: NSObject {
         
         self.downloadRequest = Alamofire.download(path, to: self.destinationPath)
         
-        
+        tempFileName = fileName
         //下载进度
         self.downloadRequest.downloadProgress(queue: DispatchQueue.main,closure: downloadProgress);
         //下载数据响应
@@ -116,7 +118,7 @@ class BaseNetWork: NSObject {
     }
     func downloadProgress(progress: Progress){
         print("当前进度：\(progress.fractionCompleted*100)%");
-//        self.downloadProgress?(progress.fractionCompleted as AnyObject)
+        self.downloadProgressBlock?(progress.fractionCompleted as AnyObject,tempFileName)
     }
     func downloadResponse(response: DownloadResponse<Data>)
     {

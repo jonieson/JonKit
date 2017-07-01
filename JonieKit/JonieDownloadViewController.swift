@@ -78,7 +78,6 @@ class JonieDownloadViewController: UIViewController {
             //页面加载完毕就自动开始下载
             self.downloadRequest =  Alamofire.download(
                 "http://yibudanche.oss-cn-qingdao.aliyuncs.com/dl/DANCHE-Release-3.6.0.apk", to: self.destinationPath);
-            //print("111111111111");
         }
         //下载进度
         self.downloadRequest.downloadProgress(queue: DispatchQueue.main,closure: downloadProgress);

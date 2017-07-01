@@ -58,6 +58,9 @@ class ViewController: UIViewController {
         }) { (fail) in
             
         }
+        BaseNetWork.sharedInstance.downloadProgressBlock = {(progress,name) in
+            print("文件名=\(progress)进度=\(name)")
+        }
 
     }
     override func didReceiveMemoryWarning() {
